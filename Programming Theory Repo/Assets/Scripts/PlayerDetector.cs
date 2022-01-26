@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDetector : MonoBehaviour
 {
     public EnemyFollower enemyFollower;
+
     // Start is called before the first frame update
     void Start()
     {

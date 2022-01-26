@@ -9,7 +9,7 @@ public class EnemyFollower : Enemy
 
     [SerializeField] float speed; //current Speed 
     private Vector3 distanceFromPlayer;
-    public bool isDetected  {get; set;}
+    public bool isDetected  {get; set;} //ENCAPSULATION
    
     private void Start()
     {
@@ -19,7 +19,7 @@ public class EnemyFollower : Enemy
 
     private void Update()
     {  
-         EnemyMove();    
+         EnemyMove();    //ABSTRACTION
     }
 
     public override void EnemyMove()
@@ -33,12 +33,12 @@ public class EnemyFollower : Enemy
  
     private void OnCollisionEnter(Collision collision) 
     { 
-        EffectOnPlayer(collision);  
+        EffectOnPlayer(collision);  //ABSTRACTION
     }
     
-    //polimorphism
+    
     //if the enemy collides with the player it disables characterController
-    public override void EffectOnPlayer(Collision collision)
+    public override void EffectOnPlayer(Collision collision) //POLIMORPHISM
     {
         playerGo.GetComponent<CharacterController>().enabled = false;
     }

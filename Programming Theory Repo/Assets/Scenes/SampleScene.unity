@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 1
-  repeatTime: 4
+  repeatTime: 3
   enemyBouncer: {fileID: 276488634123973720, guid: 51fdfeaedc8ee4d4584980b673ed8a82, type: 3}
   playerGo: {fileID: 300547668}
 --- !u!1 &1254696216

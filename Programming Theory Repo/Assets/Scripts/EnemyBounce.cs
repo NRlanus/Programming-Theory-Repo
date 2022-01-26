@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBounce : Enemy 
+public class EnemyBounce : Enemy // INHERITANCE
 {
     private Rigidbody enemyRb;
     [SerializeField] float forceSpeed;
@@ -16,9 +16,9 @@ public class EnemyBounce : Enemy
     // Update is called once per frame
     void Update()
     {
-        EnemyMove();
+        EnemyMove(); //ABSTRACTION
     }
-    public override void EnemyMove()
+    public override void EnemyMove() // POLYMORHISM
     {
         enemyRb.AddForce(Vector3.right * forceSpeed * Time.deltaTime, ForceMode.Impulse);
     }

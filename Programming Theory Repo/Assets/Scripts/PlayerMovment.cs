@@ -7,8 +7,7 @@ public class PlayerMovment : MonoBehaviour
 {
     
     CharacterController playerController;
-    Vector3 moveVector = Vector3.zero;
-
+    Vector3 moveVector = Vector3.zero; 
     public float moveSpeed;
     public float jumpSpeed;
     public float gravity;
@@ -25,6 +24,8 @@ public class PlayerMovment : MonoBehaviour
     {
         playerMovement();
         ConstraintsPlayerMovement();
+        PlayerPushed();
+        
     }
     
     void playerMovement()
@@ -51,11 +52,14 @@ public class PlayerMovment : MonoBehaviour
         if (playerController.transform.position.x < -xPos)
         {
             playerController.transform.position = new Vector3(-xPos, playerController.transform.position.y, 0);
+            playerController.enabled = true;
         }
         if (playerController.transform.position.x > xPos)
         {
             playerController.transform.position = new Vector3(xPos, playerController.transform.position.y, 0);
+            playerController.enabled = true;
         }
+        
     }
     //if the player collides with a ladder collider he is allowed to go up
     private void OnTriggerStay(Collider other)
@@ -65,5 +69,13 @@ public class PlayerMovment : MonoBehaviour
             moveVector.y = Input.GetAxis("Vertical") * moveSpeed;
         }
     }
+    
+    void PlayerPushed()
+    {
+        if(!playerController.enabled)
+        {
+            transform.Translate(Vector3.right * 4.5f*Time.deltaTime);
+        }
+    }    
 
 }

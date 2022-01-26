@@ -24,6 +24,7 @@ public class SpawnerManager : MonoBehaviour
 
     void InstantiateEnemy()
     {
+        if(playerGo!=null)
         Instantiate(enemyBouncer,transform.position,transform.rotation);
     }
 }

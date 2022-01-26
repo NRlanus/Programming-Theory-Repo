@@ -8,11 +8,12 @@ public class EnemyFollower : Enemy
     private Rigidbody enemyRb;
 
     [SerializeField] float speed; //current Speed 
-    Vector3 distanceFromPlayer;
-    public bool isDetected = false;
+    private Vector3 distanceFromPlayer;
+    public bool isDetected  {get; set;}
    
     private void Start()
-    {  
+    {
+        isDetected = false;
         enemyRb = GetComponent<Rigidbody>();
     }
 
@@ -36,6 +37,7 @@ public class EnemyFollower : Enemy
     }
     
     //polimorphism
+    //if the enemy collides with the player it disables characterController
     public override void EffectOnPlayer(Collision collision)
     {
         playerGo.GetComponent<CharacterController>().enabled = false;

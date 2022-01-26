@@ -9,13 +9,7 @@ public class PlayerDetector : MonoBehaviour
     void Start()
     {
         enemyFollower = gameObject.GetComponentInParent<EnemyFollower>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    } 
 
     private void OnTriggerStay(Collider other)
     {
@@ -23,8 +17,7 @@ public class PlayerDetector : MonoBehaviour
         {
             enemyFollower.isDetected = true;
             Debug.Log("I see you");
-        }
-        
+        }   
     }
      private void OnTriggerExit(Collider other)
     {

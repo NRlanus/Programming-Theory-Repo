@@ -5,10 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float wanderingDistance;
+    [SerializeField] float startingPoint;
 
     public virtual void EnemyMove()
     {
-        transform.position = new Vector3(Mathf.PingPong(Time.time, wanderingDistance), transform.position.y, transform.position.z); 
+        transform.position = new Vector3(Mathf.PingPong(Time.time, wanderingDistance)+startingPoint, transform.position.y, transform.position.z); 
     }
 
     public virtual void EffectOnPlayer(Collision collision)

@@ -8,10 +8,10 @@ public class PlayerMovment : MonoBehaviour
     
     CharacterController playerController;
     Vector3 moveVector = Vector3.zero; 
-    public float moveSpeed;
-    public float jumpSpeed;
-    public float gravity;
-    private float xPos = 8.8f;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float jumpSpeed; 
+    [SerializeField] private float xPos = 8.8f;
+    [SerializeField] private float gravity;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +46,7 @@ public class PlayerMovment : MonoBehaviour
             moveVector.y = jumpSpeed;
         }
     }
-    
+    //if the player position is < -xPos or >xPos it stops moving.
     void ConstraintsPlayerMovement()
     {
         if (playerController.transform.position.x < -xPos)

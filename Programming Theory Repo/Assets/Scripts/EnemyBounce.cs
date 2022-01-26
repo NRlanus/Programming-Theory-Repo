@@ -23,7 +23,7 @@ public class EnemyBounce : Enemy
         enemyRb.AddForce(Vector3.right * forceSpeed * Time.deltaTime, ForceMode.Impulse);
     }
 
-    //if the enemye go out of the screen it´s destroyed
+    //if the enemy goes out of the screen it´s destroyed
     void ConstraintsEnemyPosition()
     {
         if(transform.position.x<10)
